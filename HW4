@@ -1,0 +1,125 @@
+import UIKit
+
+/*
+ 1. Написать функцию, которая:
+ - Будет просто выводить в консоль ”Hello, world!”
+ .
+ - Будет принимать аргумент “имя” и выводить в консоль “Hello, имя” (вызов функции
+ должен быть следующим - printHi(“Misha”)).
+ - Будет принимать аргумент имя и возвращать строку приветствия “Hello! имя”
+ .*/
+
+func printHelloWorld() {
+    print("Hello, world!")
+}
+printHelloWorld()
+
+func printHi( name: String) {
+    print("Hello, \(name)")
+}
+printHi (name:"Misha")
+
+
+func returnHello(name: String) -> String {
+    return "Hello! \(name)"
+}
+print(returnHello(name: "Misha"))
+
+
+/*
+ 2. Написать функцию, которая принимает две строки и возвращает сумму количества
+ символов двух строк.
+ */
+
+func sumOfCharacters(string1: String, string2: String) -> Int{
+    return string1.count + string2.count
+}
+let totalCharacters = sumOfCharacters(string1: "Hello", string2: "World!")
+print(totalCharacters)
+/*
+ 3. Написать функцию, которая выводит в консоль квадрат переданного числа.
+ */
+func printSquare (of number: Int) {
+    let square = number * number
+    print ("квадрат числа \(number) равен \(square)")
+}
+printSquare(of: 88)
+
+/*
+ 4. Создать функции, которые будут суммировать, вычитать, умножать и делить числа
+ sum(num1:num2:).
+ */
+func sum(num1: Double, num2: Double) -> Double {
+    return num1 + num2
+}
+let sumResult = sum(num1: 14, num2: 41)
+print ("сумма  \(sumResult)")
+
+func subtract(num1: Double, num2: Double) -> Double {
+    return num1 - num2
+}
+let subtractResult = subtract(num1: 14, num2: 41)
+print ("разность  \(subtractResult)")
+
+func multiply(num1: Double, num2: Double) -> Double {
+    return num1 * num2
+}
+let multiplyResult = multiply(num1: 14, num2: 41)
+print ("произведение  \(multiplyResult)")
+
+func divide(num1: Double, num2: Double) -> Double {
+    return num1 / num2
+}
+let divideResult = divide(num1: 14, num2: 41)
+print ("частное  \(divideResult)")
+
+/*
+ 5. Создать функцию, которая принимает параметры и вычисляет площадь круга.
+ */
+
+func radiusCircle (radius: Double) -> Double {
+    let Circle = Double.pi * radius * radius
+    return Circle
+}
+let circle=radiusCircle(radius: 10)
+print ("площадь круга равна \(circle)")
+
+
+/*
+ 6. Создать функцию, которая принимает логический тип “ночь ли сегодня” и возвращает
+ строку с описанием времени суток.
+ */
+func timeOfDay (isNight: Bool) -> String {
+    return isNight ? "ночь" : "день"
+}
+print (timeOfDay(isNight: true))
+print (timeOfDay(isNight: false))
+
+/*
+ 7. Создать функцию, принимающую 1 аргумент — число от 0 до 100, и возвращающую
+ true, если оно простое, и false, если сложное.
+ */
+
+
+
+/*
+ 8. Создать функцию, принимающую 1 аргумент — номер месяца (от 1 до 12), и
+ возвращающую время года, которому этот месяц принадлежит (зима, весна, лето или
+ осень).
+ */
+func season(forMonth month: Int) -> String {
+    switch month {
+    case 12, 1, 2:
+        return "Зима"
+    case 3, 4, 5:
+        return "Весна"
+    case 6, 7, 8:
+        return "Лето"
+    case 9, 10, 11:
+        return "Осень"
+    default:
+        return "error"
+    }
+}
+print(season(forMonth: 10))
+print(season(forMonth: 13))
